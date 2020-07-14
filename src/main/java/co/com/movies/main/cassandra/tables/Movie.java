@@ -1,6 +1,7 @@
-package co.com.movies.cassandra.tables;
+package co.com.movies.main.cassandra.tables;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.cassandra.core.mapping.Column;
@@ -12,8 +13,8 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(MoviesById.MOVIES_BY_ID_TABLE)
-public class MoviesById {
+@Table(Movie.MOVIES_BY_ID_TABLE)
+public class Movie {
 
     static final String MOVIES_BY_ID_TABLE = "movies_by_id_table";
 

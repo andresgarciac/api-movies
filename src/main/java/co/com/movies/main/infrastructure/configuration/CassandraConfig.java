@@ -1,4 +1,4 @@
-package co.com.movies.main.configuration;
+package co.com.movies.main.infrastructure.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -7,7 +7,7 @@ import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
 @Configuration
-@EnableCassandraRepositories
+@EnableCassandraRepositories("co.com.movies.cassandra.repositories")
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Value("${cassandra.contactpoints}")
