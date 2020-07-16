@@ -13,6 +13,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(Movie.MOVIES_BY_ID_TABLE)
 public class Movie {
 
