@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static co.com.movies.main.infrastructure.errors.ServicesErrorDefinition.invalidRequest;
+
 @NoArgsConstructor
 public class MovieServices {
 
@@ -36,7 +38,7 @@ public class MovieServices {
     public Either<ServiceError, MovieDTO> createMovie(MovieDTO movie) {
 
         if(movie == null) {
-            return Either.left(ServiceError.builder().statusCode(400).errorCode("400").message("The request is invalid").build());
+            return Either.left(invalidRequest);
         }
         return Either.right(Transformers.toMovieDTO(repository.save(Transformers.toMovieEntity(movie))));
     }
